@@ -63,9 +63,6 @@ async function deployCDK(secretStore){
 }
 
 exports.handler = (event, context, callback) => {
-  console.log(`Hi from Node.js ${process.version} on Lambda!`)
-  console.log(`Hi from Node env ${process.execPath} on Lambda!`)
-  
   if (secretStore == undefined) {
     getSecrets(secretName, default_region, function(err, data){
       if (err) throw err;

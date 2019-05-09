@@ -30,7 +30,7 @@ class codeApp extends cdk.App {
         super(argv);
     
         // stack for codebuild
-        this.codeBuildStack = new CodeBuildStack(this, argv.gitRepo, argv);
+        this.codeBuildStack = new CodeBuildStack(this, 'codebuild-' + argv.gitRepo, argv);
     };
 }
 
