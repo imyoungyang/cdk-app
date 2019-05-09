@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  CodeBuild:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: CodeBuild/index.handler
+      Runtime: nodejs8.10
+      Description: ''
+      MemorySize: 512
+      Timeout: 180
+      Role: 'arn:aws:iam::232367251376:role/lambda_basic_execute_role'
