@@ -18,7 +18,13 @@ class CodeBuildStack extends cdk.Stack {
             source: gitHubSource,
             environment: {
                 buildImage: codebuild.LinuxBuildImage.UBUNTU_14_04_DOCKER_18_09_0,
-                privileged: true
+                privileged: true,
+                environmentVariables: {
+                    "AWS_ACCOUNT_ID": {
+                        value: props.env.account.toString(),
+                        type: codebuild.BuildEnvironmentVariableType.PLAINTEXT
+                    }
+                }
             }
         });
     }
