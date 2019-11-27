@@ -10,4 +10,5 @@ Resources:
       Description: ''
       MemorySize: 512
       Timeout: 180
-      Role: 'arn:aws:iam::232367251376:role/lambda_basic_execute_role'
+      Role:
+        'Fn::Sub': 'arn:aws:iam::${AWS::AccountId}:role/lambda_basic_execute_role'
